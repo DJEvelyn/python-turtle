@@ -35,6 +35,6 @@ e_drawer.draw(turtle)
 #letter_drawer = DrawLetter(25, 'B')
 #letter_drawer.draw(turtle)
 
-draw_word("HELLO", 25, turtle)
+draw_word("MISSION FAILED SNAKE", 10, turtle)
 
 input('Press Enter to close')

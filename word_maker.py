@@ -42,7 +42,9 @@ class DrawLetter(GridDrawer):
 def draw_word(word : str, size : int, turtle : Turtle, word_spacing = 0.2):
 
     position = turtle.position()
-    xPos, yPos = int(position[0]), int(position[1])
+    letter_count = len(word)
+    adjustment = (size * letter_count) / 2
+    xPos, yPos = int(position[0] - adjustment), int(position[1])
 
     for letter in word:
 
@@ -50,9 +52,10 @@ def draw_word(word : str, size : int, turtle : Turtle, word_spacing = 0.2):
         turtle.goto(xPos, yPos)
         turtle.pendown()
 
-        letter_drawer = DrawLetter(size, letter)
-        letter_drawer.set_start_position(xPos, yPos)
-        letter_drawer.draw(turtle)
+        if letter != ' ':
+            letter_drawer = DrawLetter(size, letter)
+            letter_drawer.set_start_position(xPos, yPos)
+            letter_drawer.draw(turtle)
 
         xPos = xPos + size + (size * word_spacing)
         yPos = yPos

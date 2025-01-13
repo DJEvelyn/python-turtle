@@ -21,10 +21,11 @@ class GridDrawer:
     startX = 0
     startY = 0
 
-    program_dict = {} # Connections. Index A -> Index B
+    program_dict = [] # Connections. Index A -> Index B
 
 
     def __init__(self, size):
+        self.program_dict = []
         self.size = size
 
     def set_start_position(self, x : int, y : int):
@@ -42,7 +43,7 @@ class GridDrawer:
         6 7 8
         """
         
-        self.program_dict[startPos] = endPos
+        self.program_dict.append((startPos, endPos))
 
     def __get_position_for_point(self, i : int) -> tuple[int, int]:
         """
@@ -61,7 +62,7 @@ class GridDrawer:
     def draw(self, turtle : Turtle):
         turtle.setpos(self.startX, self.startY)
 
-        for route in self.program_dict.items():
+        for route in self.program_dict:
             
             self.startPos = self.__get_position_for_point(route[0])
             self.endPos = self.__get_position_for_point(route[1])
