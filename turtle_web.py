@@ -27,9 +27,6 @@ def draw_circles(turtle : Turtle, amount : int, size : int):
 
         turtle.setpos(xPos, yPos - circle_size)
 
-        #if i % 2 == 0:
-           # circle_size = -circle_size
-
         turtle.circle(circle_size)
 
 
