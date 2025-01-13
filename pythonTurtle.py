@@ -45,11 +45,17 @@ def draw_shape(turtle : Turtle, side_length: int, shape_name : str):
     else:
         print("Shape is not in dictionary")
 
-draw_shape(main_turtle, 50, 'hexagon')
+shape = input("Draw a shape: ")
+size = input("Add a number for size: ")
+
+try:
+    draw_shape(main_turtle, int(size), shape)
+except:
+    print("Invalid inputs ")
+
 
 pos = main_turtle.pos()
 print(f'main_turtle position = ({int(pos[0])}, {int(pos[1])})')
-
 
 
 done()
