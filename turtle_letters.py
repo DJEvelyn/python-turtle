@@ -17,6 +17,3 @@ def draw_word(turtle : Turtle, word : str):
 
 def draw_I(turtle : Turtle, size : int):
     pass
-
-
-
